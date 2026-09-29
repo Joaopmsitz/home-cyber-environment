@@ -98,7 +98,7 @@ For the complete network design, addressing scheme, segmentation, and architectu
 | ------------- | ----------------------- | -------------------- | --------------- |
 | `SOC-pfSense` | Firewall / Router       | WAN / GREEN / ORANGE | `.1`            |
 | `DC01`        | Domain Controller / DNS | GREEN                | `192.168.10.10` |
-| `WIN01`       | Domain Workstation      | GREEN                | `192.168.10.20` |
+| `WIN01`       | Domain Workstation      | GREEN                | `192.168.10.100` |
 | `Linux01`     | DMZ Host                | ORANGE               | `192.168.20.x`  |
 | `SIEM01`      | Wazuh SIEM              | GREEN                | `TBD`           |
 | `ATTACKER01`  | Attack Simulation       | TBD                  | `TBD`           |
@@ -116,7 +116,7 @@ For the complete network design, addressing scheme, segmentation, and architectu
 ## 📁 Repository Structure
 
 ```text
-home-soc-lab/
+home-cyber-environment/
 │
 ├── README.md
 ├── CHECKPOINTS.md
@@ -163,9 +163,9 @@ The lab is being developed incrementally, with each phase validated before movin
 
 | Phase | Focus                                                            | Status |
 | ----- | ---------------------------------------------------------------- | ------ |
-| 1     | Network Infrastructure — pfSense, GREEN/ORANGE                   | ⬜      |
-| 2     | Active Directory — DC01, WIN01, domain join                      | ⬜      |
-| 3     | Security Telemetry — Sysmon, CrowdSec                            | ⬜      |
+| 1     | Network Infrastructure — pfSense, GREEN/ORANGE                   | ✅      |
+| 2     | Active Directory — DC01, WIN01, domain join                      | ✅      |
+| 3     | Security Telemetry — Sysmon, CrowdSec                            | 🟡      |
 | 4     | SIEM — Wazuh deployment & dashboards                             | ⬜      |
 | 5     | Attack Simulation — attacker VM & scenarios                      | ⬜      |
 | 6     | SOC Operations — investigation, MITRE mapping & incident reports | ⬜      |
