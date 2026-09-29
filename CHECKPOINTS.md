@@ -111,3 +111,36 @@ The screenshot documents the network configuration and connectivity validation p
 ![WIN01 domain validation](screenshots/phase-02-active-directory/WIN01/win01-domain-validation.png)
 
 The screenshot documents the successful integration of WIN01 into the `soclab.local` Active Directory domain and the healthy secure channel between WIN01 and the domain.
+## Phase 3 - Telemetry
+
+### Checkpoint 03 - WIN01 Sysmon Deployment
+
+**Status:** Validated
+
+**Date:** 2026-09-29
+
+#### Sysmon Configuration
+
+| Parameter | Value |
+|---|---|
+| VM | WIN01 |
+| Operating System | Windows 11 Pro |
+| Component | Sysmon |
+| Service Status | Running |
+| Operational Log | `Microsoft-Windows-Sysmon/Operational` |
+
+#### Validation
+
+- Sysmon feature enabled: PASS
+- Sysmon service installation: PASS
+- Sysmon service status: PASS
+- Sysmon operational log available: PASS
+- Sysmon events being generated: PASS
+
+#### Evidence
+
+**Evidence 01 - WIN01 Sysmon Validation**
+
+![WIN01 Sysmon validation](screenshots/phase-03-telemetry/WIN01/win01-sysmon-validation.png)
+
+The screenshot documents the Sysmon service running on WIN01 and the presence of events in the Sysmon operational log.
