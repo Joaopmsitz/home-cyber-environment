@@ -49,23 +49,21 @@ The lab is designed as a segmented virtual enterprise environment using **pfSens
         ┌────────┴────────┐                        │
         │                 │                        │
       DC01              WIN01                   Linux01
-   AD / DNS           Workstation                DMZ Host
-        │
-        │
-   Sysmon / CrowdSec
-        │
-        ▼
-      Wazuh
-       SIEM
-        │
-        ▼
- Detection & Investigation
-        │
-        ▼
- MITRE ATT&CK Mapping
-        │
-        ▼
- Response & Incident Report
+   AD / DNS       Workstation / Sysmon           DMZ Host
+        │                 │
+        └────────┬────────┘
+                 │
+              Wazuh
+          SIEM (Planned)
+                 │
+                 ▼
+       Detection & Investigation
+                 │
+                 ▼
+        MITRE ATT&CK Mapping
+                 │
+                 ▼
+        Response & Incident Report
 ```
 
 The architecture will evolve as new systems, security controls, telemetry sources, and attack scenarios are introduced.
@@ -83,10 +81,10 @@ For the complete network design, addressing scheme, segmentation, and architectu
 | Virtualization                | VirtualBox                          |
 | Firewall / Network Security   | pfSense                             |
 | Identity & Directory Services | Active Directory                    |
-| Endpoint                      | Windows 10/11 Pro                   |
+| Endpoint                      | Windows 11 Pro                      |
 | Endpoint Telemetry            | Sysmon                              |
-| Security Engine               | CrowdSec                            |
-| SIEM                          | Wazuh                               |
+| Security Engine               | CrowdSec (Planned)                  |
+| SIEM                          | Wazuh (Planned)                     |
 | Attack Simulation             | Kali Linux / other controlled tools |
 | Detection Framework           | MITRE ATT&CK                        |
 
@@ -94,14 +92,14 @@ For the complete network design, addressing scheme, segmentation, and architectu
 
 ## 🖥️ Lab Environment
 
-| Hostname      | Role                    | Network              | IP Address      |
-| ------------- | ----------------------- | -------------------- | --------------- |
-| `SOC-pfSense` | Firewall / Router       | WAN / GREEN / ORANGE | `.1`            |
-| `DC01`        | Domain Controller / DNS | GREEN                | `192.168.10.10` |
+| Hostname      | Role                    | Network              | IP Address       |
+| ------------- | ----------------------- | -------------------- | ---------------- |
+| `SOC-pfSense` | Firewall / Router       | WAN / GREEN / ORANGE | `.1`             |
+| `DC01`        | Domain Controller / DNS | GREEN                | `192.168.10.10`  |
 | `WIN01`       | Domain Workstation      | GREEN                | `192.168.10.100` |
-| `Linux01`     | DMZ Host                | ORANGE               | `192.168.20.x`  |
-| `SIEM01`      | Wazuh SIEM              | GREEN                | `TBD`           |
-| `ATTACKER01`  | Attack Simulation       | TBD                  | `TBD`           |
+| `Linux01`     | DMZ Host                | ORANGE               | `192.168.20.x`   |
+| `SIEM01`      | Wazuh SIEM              | GREEN                | `TBD`            |
+| `ATTACKER01`  | Attack Simulation       | TBD                  | `TBD`            |
 
 ### Network Segmentation
 
@@ -133,6 +131,7 @@ home-cyber-environment/
 │
 ├── configs/
 │   ├── sysmon/
+│   │   └── sysmonconfig.xml
 │   ├── crowdsec/
 │   └── wazuh/
 │
@@ -165,7 +164,7 @@ The lab is being developed incrementally, with each phase validated before movin
 | ----- | ---------------------------------------------------------------- | ------ |
 | 1     | Network Infrastructure — pfSense, GREEN/ORANGE                   | ✅      |
 | 2     | Active Directory — DC01, WIN01, domain join                      | ✅      |
-| 3     | Security Telemetry — Sysmon, CrowdSec                            | 🟡      |
+| 3     | Security Telemetry — Sysmon, CrowdSec                            | 🟡     |
 | 4     | SIEM — Wazuh deployment & dashboards                             | ⬜      |
 | 5     | Attack Simulation — attacker VM & scenarios                      | ⬜      |
 | 6     | SOC Operations — investigation, MITRE mapping & incident reports | ⬜      |
