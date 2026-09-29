@@ -113,7 +113,7 @@ The screenshot documents the network configuration and connectivity validation p
 The screenshot documents the successful integration of WIN01 into the `soclab.local` Active Directory domain and the healthy secure channel between WIN01 and the domain.
 ## Phase 3 - Telemetry
 
-### Checkpoint 03 - WIN01 Sysmon Deployment
+### Checkpoint 03 - WIN01 Sysmon & PowerShell Telemetry
 
 **Status:** Validated
 
@@ -132,6 +132,15 @@ The screenshot documents the successful integration of WIN01 into the `soclab.lo
 | Network Connection | Enabled |
 | Operational Log | `Microsoft-Windows-Sysmon/Operational` |
 
+#### PowerShell Logging Configuration
+
+| Parameter | Value |
+|---|---|
+| Feature | PowerShell Script Block Logging |
+| Status | Enabled |
+| Operational Log | `Microsoft-Windows-PowerShell/Operational` |
+| Event ID | 4104 |
+
 #### Events Monitored
 
 - Event ID 1 — Process Create
@@ -139,6 +148,7 @@ The screenshot documents the successful integration of WIN01 into the `soclab.lo
 - Event ID 11 — File Create
 - Event ID 13 — Registry Value Set
 - Event ID 22 — DNS Query
+- Event ID 4104 — PowerShell Script Block Logging
 
 #### Validation
 
@@ -153,6 +163,8 @@ The screenshot documents the successful integration of WIN01 into the `soclab.lo
 - Event ID 11 generation: PASS
 - Event ID 13 generation: PASS
 - Event ID 22 generation: PASS
+- PowerShell Script Block Logging enabled: PASS
+- Event ID 4104 generation: PASS
 
 #### Evidence
 
@@ -167,3 +179,9 @@ The screenshot documents the Sysmon service running on WIN01 and the availabilit
 ![WIN01 Sysmon telemetry validation](screenshots/phase-03-telemetry/WIN01/win01-sysmon-telemetry-validation.png)
 
 The screenshot documents the active Sysmon configuration and the generation of network, file creation, registry, and DNS telemetry events during controlled validation tests.
+
+**Evidence 03 - WIN01 PowerShell Script Block Logging**
+
+![WIN01 PowerShell Script Block Logging](screenshots/phase-03-telemetry/WIN01/win01-powershell-scriptblock-validation.png)
+
+The screenshot documents PowerShell Script Block Logging enabled on WIN01 and the generation of Event ID 4104 in the PowerShell operational log.
