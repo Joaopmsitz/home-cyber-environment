@@ -1,0 +1,22 @@
+<Sysmon schemaversion="4.91">
+  <HashAlgorithms>SHA256</HashAlgorithms>
+
+  <EventFiltering>
+
+    <!-- Process creation -->
+    <ProcessCreate onmatch="exclude" />
+
+    <!-- Network connections -->
+    <NetworkConnect onmatch="exclude" />
+
+    <!-- File creation -->
+    <FileCreate onmatch="exclude" />
+
+    <!-- Registry activity -->
+    <RegistryEvent onmatch="exclude" />
+
+    <!-- DNS queries -->
+    <DnsQuery onmatch="exclude" />
+
+  </EventFiltering>
+</Sysmon>

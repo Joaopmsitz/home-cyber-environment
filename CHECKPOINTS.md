@@ -1,4 +1,4 @@
-# Lab Checkpoints
+﻿# Lab Checkpoints
 
 ## Phase 1 - Network Infrastructure
 
@@ -127,20 +127,43 @@ The screenshot documents the successful integration of WIN01 into the `soclab.lo
 | Operating System | Windows 11 Pro |
 | Component | Sysmon |
 | Service Status | Running |
+| Config File | `C:\ProgramData\Sysmon\sysmonconfig.xml` |
+| Hashing Algorithm | SHA256 |
+| Network Connection | Enabled |
 | Operational Log | `Microsoft-Windows-Sysmon/Operational` |
+
+#### Events Monitored
+
+- Event ID 1 — Process Create
+- Event ID 3 — Network Connection
+- Event ID 11 — File Create
+- Event ID 13 — Registry Value Set
+- Event ID 22 — DNS Query
 
 #### Validation
 
 - Sysmon feature enabled: PASS
 - Sysmon service installation: PASS
 - Sysmon service status: PASS
-- Sysmon operational log available: PASS
-- Sysmon events being generated: PASS
+- XML configuration validated: PASS
+- Configuration successfully applied: PASS
+- Network connection monitoring: PASS
+- Event ID 1 generation: PASS
+- Event ID 3 generation: PASS
+- Event ID 11 generation: PASS
+- Event ID 13 generation: PASS
+- Event ID 22 generation: PASS
 
 #### Evidence
 
-**Evidence 01 - WIN01 Sysmon Validation**
+**Evidence 01 - WIN01 Sysmon Installation**
 
 ![WIN01 Sysmon validation](screenshots/phase-03-telemetry/WIN01/win01-sysmon-validation.png)
 
-The screenshot documents the Sysmon service running on WIN01 and the presence of events in the Sysmon operational log.
+The screenshot documents the Sysmon service running on WIN01 and the availability of the Sysmon operational log.
+
+**Evidence 02 - WIN01 Sysmon Telemetry Validation**
+
+![WIN01 Sysmon telemetry validation](screenshots/phase-03-telemetry/WIN01/win01-sysmon-telemetry-validation.png)
+
+The screenshot documents the active Sysmon configuration and the generation of network, file creation, registry, and DNS telemetry events during controlled validation tests.
