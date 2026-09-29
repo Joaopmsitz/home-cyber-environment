@@ -84,3 +84,30 @@ The screenshot documents the network configuration assigned to WIN01 and the suc
 ![DC01 network validation](screenshots/phase-02-active-directory/DC01/dc01-network-validation.png)
 
 The screenshot documents the network configuration and connectivity validation performed on DC01 before the Active Directory deployment, including DNS connectivity through port 53 and HTTPS connectivity through port 443.
+
+#### WIN01 Domain Integration
+
+| Parameter | Value |
+|---|---|
+| Hostname | `WIN01` |
+| Operating System | Windows 11 Pro |
+| Domain | `soclab.local` |
+| Domain Membership | `True` |
+| Secure Channel | Healthy |
+
+**Validation Date:** 2026-09-29
+
+#### Validation
+
+- Windows 11 Pro installation: PASS
+- Domain membership: PASS
+- Hostname configuration: PASS
+- Secure channel (`Test-ComputerSecureChannel`): PASS
+
+#### Evidence
+
+**Evidence 02 - WIN01 Domain Integration**
+
+![WIN01 domain validation](screenshots/phase-02-active-directory/WIN01/win01-domain-validation.png)
+
+The screenshot documents the successful integration of WIN01 into the `soclab.local` Active Directory domain and the healthy secure channel between WIN01 and the domain.
