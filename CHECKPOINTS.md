@@ -79,8 +79,8 @@ The screenshot documents the network configuration assigned to WIN01 and the suc
 
 #### Evidence
 
-![DC01 static IP](screenshots/phase-02-active-directory/DC01/dc01-static-ip.png)
+**Evidence 01 - DC01 Network Validation**
 
 ![DC01 network validation](screenshots/phase-02-active-directory/DC01/dc01-network-validation.png)
 
-The screenshots document the static network configuration and network validation performed on DC01 during the Active Directory deployment.
+The screenshot documents the network configuration and connectivity validation performed on DC01 before the Active Directory deployment, including DNS connectivity through port 53 and HTTPS connectivity through port 443.
