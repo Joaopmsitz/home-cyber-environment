@@ -215,3 +215,70 @@ The screenshot documents PowerShell Script Block Logging enabled on WIN01 and th
 ![WIN01 CrowdSec validation](screenshots/phase-03-telemetry/WIN01/win01-crowdsec-validation.png)
 
 The screenshot documents the CrowdSec Windows collection, the enabled `windows-bf` scenario, and successful acquisition and parsing of Windows Security events.
+
+## Phase 4 - SIEM
+
+### Checkpoint 04 - SIEM01 Wazuh Deployment
+
+**Status:** Validated
+
+**Date:** 2026-10-06
+
+#### SIEM01 Configuration
+
+| Parameter | Value |
+|---|---|
+| VM | SIEM01 |
+| Operating System | Ubuntu Server 24.04.5 LTS |
+| Network | SOC-GREEN |
+| IPv4 | `192.168.10.20` |
+| Subnet | `192.168.10.0/24` |
+| Default Gateway | `192.168.10.1` |
+| DNS Server | `192.168.10.10` |
+| CPU | 4 vCPU |
+| RAM | 8 GB |
+| Disk | 48 GB LVM |
+
+#### Wazuh Deployment
+
+| Parameter | Value |
+|---|---|
+| Wazuh Version | `4.14.8` |
+| Deployment Type | All-in-one |
+| Wazuh Indexer | Installed |
+| Wazuh Manager | Installed |
+| Filebeat | Installed |
+| Wazuh Dashboard | Installed |
+| Dashboard Port | `443` |
+
+#### Validation
+
+- Ubuntu Server installation: PASS
+- Static IP configuration: PASS
+- Gateway connectivity: PASS
+- DNS resolution: PASS
+- Wazuh repository configuration: PASS
+- Wazuh Indexer installation: PASS
+- Wazuh Indexer service status: PASS
+- Wazuh Indexer cluster initialization: PASS
+- Wazuh Manager installation: PASS
+- Wazuh Manager service status: PASS
+- Filebeat installation: PASS
+- Filebeat service status: PASS
+- Wazuh Dashboard installation: PASS
+- Wazuh Dashboard service status: PASS
+- Wazuh web application initialization: PASS
+
+#### Evidence
+
+**Evidence 01 - SIEM01 Wazuh Services Validation**
+
+![SIEM01 Wazuh services validation](screenshots/phase-04-siem/SIEM01/siem01-wazuh-services-validation.png)
+
+The screenshot documents the active Wazuh Indexer, Wazuh Manager, Filebeat, and Wazuh Dashboard services on SIEM01.
+
+#### Current Scope
+
+The SIEM infrastructure is deployed and operational.
+
+WIN01 has not yet been onboarded as a Wazuh Agent.

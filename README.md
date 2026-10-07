@@ -83,8 +83,8 @@ For the complete network design, addressing scheme, segmentation, and architectu
 | Identity & Directory Services | Active Directory                    |
 | Endpoint                      | Windows 11 Pro                      |
 | Endpoint Telemetry            | Sysmon                              |
-| Security Engine               | CrowdSec (Planned)                  |
-| SIEM                          | Wazuh (Planned)                     |
+| Security Engine               | CrowdSec                             |
+| SIEM                          | Wazuh                               |
 | Attack Simulation             | Kali Linux / other controlled tools |
 | Detection Framework           | MITRE ATT&CK                        |
 
@@ -98,7 +98,7 @@ For the complete network design, addressing scheme, segmentation, and architectu
 | `DC01`        | Domain Controller / DNS | GREEN                | `192.168.10.10`  |
 | `WIN01`       | Domain Workstation      | GREEN                | `192.168.10.100` |
 | `Linux01`     | DMZ Host                | ORANGE               | `192.168.20.x`   |
-| `SIEM01`      | Wazuh SIEM              | GREEN                | `TBD`            |
+| `SIEM01`      | Wazuh SIEM              | GREEN                | `192.168.10.20` |
 | `ATTACKER01`  | Attack Simulation       | TBD                  | `TBD`            |
 
 ### Network Segmentation
@@ -164,8 +164,8 @@ The lab is being developed incrementally, with each phase validated before movin
 | ----- | ---------------------------------------------------------------- | ------ |
 | 1     | Network Infrastructure — pfSense, GREEN/ORANGE                   | ✅      |
 | 2     | Active Directory — DC01, WIN01, domain join                      | ✅      |
-| 3     | Security Telemetry — Sysmon, CrowdSec                            | 🟡     |
-| 4     | SIEM — Wazuh deployment & dashboards                             | ⬜      |
+| 3     | Security Telemetry — Sysmon, CrowdSec                            | ✅      |
+| 4     | SIEM — Wazuh deployment & dashboards                             | 🟡     |
 | 5     | Attack Simulation — attacker VM & scenarios                      | ⬜      |
 | 6     | SOC Operations — investigation, MITRE mapping & incident reports | ⬜      |
 
